@@ -10,17 +10,25 @@ mongoose
     console.log("connection error");
   });
 
-const user = new User({
-  name: "Logesh",
-  age: 28,
-});
+// const user = new User({
+//   name: "Logesh",
+//   age: 28,
+// });
 // user.save().then(() => {
 //   console.log("User Saved");
 // });
 
 async function run() {
-  const newUser = await user.save();
-  console.log(newUser);
+  const newuser = await User.create({
+    name: "Nimas",
+    age: 23,
+    hobbies: ["Sports", "Music"],
+    address: {
+      street: "2nd Street",
+    },
+  });
+
+  console.log(newuser);
 }
 
-run()
+run();
