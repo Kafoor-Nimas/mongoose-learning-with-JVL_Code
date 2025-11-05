@@ -38,8 +38,12 @@ async function run() {
 
     // const user = await User.findByName("Nimas");
     // const user = await User.find().byName("Nimas");
-    const user = await User.findById("690b3b9b10a9deb7e7630435");
+    // const user = await User.findById("690b3b9b10a9deb7e7630435");
     // user.sayHi();
+    const user = await User.findById("690b25a03741810531729125");
+    user.name = "Manikandan";
+    user.age = 22;
+    await user.save();
     console.log(user);
     console.log(user.namedEmail);
   } catch (error) {
