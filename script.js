@@ -32,9 +32,13 @@ async function run() {
     // });
     // console.log(newuser);
 
-    const user = await User.where("_id")
-      .equals("690b3b0d31606cca7e4cc195")
-      .populate("bestFriend");
+    // const user = await User.where("_id")
+    //   .equals("690b3b0d31606cca7e4cc195")
+    //   .populate("bestFriend");
+
+    // const user = await User.findByName("Nimas");
+    const user = await User.find().byName("Nimas");
+    // user.sayHi();
     console.log(user);
   } catch (error) {
     console.log(error.message);

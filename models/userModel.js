@@ -35,6 +35,17 @@ const userSchema = new mongoose.Schema({
   address: addressSchema,
 });
 
+userSchema.methods.sayHi = function () {
+  console.log(`My name is ${this.name}`);
+};
+
+userSchema.statics.findByName = function (name) {
+  return this.find({ name: name });
+};
+userSchema.query.byName = function (name) {
+  return this.where({ name: name });
+};
+
 const userModel = mongoose.model("User", userSchema);
 
 module.exports = userModel;
