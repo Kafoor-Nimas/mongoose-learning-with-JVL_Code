@@ -19,16 +19,20 @@ mongoose
 // });
 
 async function run() {
-  const newuser = await User.create({
-    name: "Nimas",
-    age: 23,
-    hobbies: ["Sports", "Music"],
-    address: {
-      street: "2nd Street",
-    },
-  });
-
-  console.log(newuser);
+  try {
+    const newuser = await User.create({
+      name: "Nimas",
+      age: 24,
+      hobbies: ["Sports", "Music"],
+      address: {
+        street: "2nd Street",
+      },
+      email:"funNimas@gmail.com"
+    });
+    console.log(newuser);
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
 run();
