@@ -20,16 +20,22 @@ mongoose
 
 async function run() {
   try {
-    const newuser = await User.create({
-      name: "Nimas",
-      age: 24,
-      hobbies: ["Sports", "Music"],
-      address: {
-        street: "2nd Street",
-      },
-      email:"funNimas@gmail.com"
-    });
-    console.log(newuser);
+    // const newuser = await User.create({
+    //   name: "Nimas",
+    //   age: 24,
+    //   hobbies: ["Sports", "Music"],
+    //   address: {
+    //     street: "2nd Street",
+    //   },
+    //   bestFriend:"690b25a03741810531729125",
+    //   email:"funNimas@gmail.com"
+    // });
+    // console.log(newuser);
+
+    const user = await User.where("_id")
+      .equals("690b3b0d31606cca7e4cc195")
+      .populate("bestFriend");
+    console.log(user);
   } catch (error) {
     console.log(error.message);
   }
