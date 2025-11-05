@@ -37,9 +37,11 @@ async function run() {
     //   .populate("bestFriend");
 
     // const user = await User.findByName("Nimas");
-    const user = await User.find().byName("Nimas");
+    // const user = await User.find().byName("Nimas");
+    const user = await User.findById("690b3b9b10a9deb7e7630435");
     // user.sayHi();
     console.log(user);
+    console.log(user.namedEmail);
   } catch (error) {
     console.log(error.message);
   }
